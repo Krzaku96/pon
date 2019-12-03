@@ -48,7 +48,8 @@ class ImportData:
         columns_names = self.import_names_of_columns()
         usecols = self.import_columns_without_class()
 
-        data = pd.read_csv(self.dataset_path, sep=';', index_col=-1, names=columns_names, usecols=usecols, nrows=800)
+        data = pd.read_csv(self.dataset_path, sep=';', index_col=-1, names=columns_names,
+                           usecols=usecols, nrows=2000)
 
         return data.values
 
@@ -57,7 +58,8 @@ class ImportData:
         columns_names = self.import_names_of_columns()
         usecols = self.import_columns_without_class()
 
-        data = pd.read_csv(self.dataset_path, sep=';', index_col=-1, names=columns_names, usecols=usecols, skiprows=800)
+        data = pd.read_csv(self.dataset_path, sep=';', index_col=-1, names=columns_names,
+                           usecols=usecols, skiprows=2000, nrows=2000)
 
         return data.values
 
@@ -65,7 +67,8 @@ class ImportData:
 
         columns_names = self.import_names_of_columns()
 
-        data = pd.read_csv(self.dataset_path, sep=';', names=columns_names, usecols=selected_columns_names, nrows=800)
+        data = pd.read_csv(self.dataset_path, sep=';', names=columns_names,
+                           usecols=selected_columns_names, nrows=2000)
 
         return data.values
 
@@ -73,6 +76,7 @@ class ImportData:
 
         columns_names = self.import_names_of_columns()
 
-        data = pd.read_csv(self.dataset_path, sep=';', names=columns_names, usecols=selected_columns_names, skiprows=800)
+        data = pd.read_csv(self.dataset_path, sep=';', names=columns_names,
+                           usecols=selected_columns_names, skiprows=2000, nrows=2000)
 
         return data.values
